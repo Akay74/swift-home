@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <Image src="/api/placeholder/80/40" alt="Logo" width={80} height={40} />
+          <Image src="/../assets/placeholder.jpg" alt="Logo" width={80} height={40} />
         </div>
 
         {/* Navigation */}

@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -21,19 +22,19 @@ const Feedback = () => {
   const feedbacks = [
     {
       name: "John Doe",
-      image: "/api/placeholder/64/64",
+      image: "/../assets/placeholder.jpg",
       rating: 5,
       comment: "Exceptional service! Their innovative solutions have truly transformed our business operations."
     },
     {
       name: "Jane Smith",
-      image: "/api/placeholder/64/64",
+      image: "/../assets/placeholder.jpg",
       rating: 4,
       comment: "Very impressed with their professionalism and the quality of their work. Highly recommended!"
     },
     {
       name: "Bob Johnson",
-      image: "/api/placeholder/64/64",
+      image: "/../assets/placeholder.jpg",
       rating: 5,
       comment: "Their team went above and beyond our expectations. We're already seeing great results!"
     }
