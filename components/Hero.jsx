@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -28,7 +29,7 @@ const Hero = () => {
             <div className="flex md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-500 hover:text-gray-600 focus:outline-none focus:ring"
+                className="text-gray-500 hover:text-gray-600 focus:outline-none focus:ring shadow-md"
               >
                 <Menu size={24} />
               </button>
