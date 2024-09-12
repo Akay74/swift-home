@@ -24,32 +24,32 @@ const Services = () => {
     {
       title: "Brand management",
       description: "We build and maintain your brand's identity, enhancing visibility and audience connection.",
-      imageSrc: "../assets/placeholder.jpg"
+      imageSrc: "/../assets/placeholder.jpg"
     },
     {
       title: "Product design",
       description: "We create intuitive and visually engaging designs that resonate with your users.",
-      imageSrc: "../assets/placeholder.jpg"
+      imageSrc: "/../assets/placeholder.jpg"
     },
     {
       title: "Product development",
       description: "We bring ideas to life with innovative products aligned with market needs.",
-      imageSrc: "/api/placeholder/400/300"
+      imageSrc: "/../assets/placeholder.jpg"
     },
     {
       title: "Data analysis",
       description: "We turn data into actionable insights to support informed decision-making.",
-      imageSrc: "../assets/placeholder.jpg"
+      imageSrc: "/../assets/placeholder.jpg"
     },
     {
       title: "Product management",
       description: "We manage your product's lifecycle, ensuring market success and user satisfaction.",
-      imageSrc: "../assets/placeholder.jpg"
+      imageSrc: "/../assets/placeholder.jpg"
     },
     {
       title: "IT consulting",
       description: "We offer expert guidance to optimize your IT infrastructure and drive business growth.",
-      imageSrc: "../assets/placeholder.jpg"
+      imageSrc: "/../assets/placeholder.jpg"
     }
   ];
 
