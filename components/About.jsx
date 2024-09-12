@@ -2,8 +2,8 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="container mx-auto px-4 py-8 text-[#F9F9F9]">
-      <h1 className="text-4xl text-center font-bold mb-8">About us</h1>
+    <div className="container mx-auto mt-5 px-4 py-3 text-[#F9F9F9]">
+      <h1 className="text-4xl text-center font-bold mb-4">About us</h1>
       
       <div className="mb-8">
         <p className="mb-4">We are a leading tech solutions provider, shaping the future across the most in-demand niches in the tech space. Our mission is to equip businesses with powerful strategies that align with the latest market trends, deploying precise and innovative tactics to ensure visibility, authority, leadership, and success.</p>
