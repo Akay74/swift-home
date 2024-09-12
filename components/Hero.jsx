@@ -1,12 +1,14 @@
 "use client"
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import Logo from '../assets/logo.png';
 
 const NavItem = ({ href, children, active }) => (
   <a
     href={href}
-    className={`block py-2 px-4 text-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ${
-      active ? 'border-b-2 border-blue-700' : ''
+    className={`block py-2 px-4 text-lg md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ${
+      active ? 'border-b-3 border-[#F9F9F9]' : ''
     }`}
   >
     {children}
@@ -36,8 +38,8 @@ const Hero = () => {
             </div>
 
             {/* Logo */}
-            <div className="flex-shrink-0 flex items-center">
-              <img className="h-8 w-auto" src="/assets/logo.jpg" alt="Logo" />
+            <div className="flex-shrink-0 flex ml-[20%]">
+              <Image className="h-8 w-auto" src={Logo} alt="Logo" />
             </div>
 
             {/* Desktop menu */}
@@ -88,11 +90,11 @@ const Hero = () => {
         {/* Mobile menu */}
         <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
           <div className="fixed inset-0 z-50 bg-gray-800 bg-opacity-25 backdrop-blur-sm">
-            <div className="fixed inset-y-0 left-0 max-w-xs w-full bg-white shadow-xl overflow-y-auto">
+            <div className="fixed inset-y-0 left-0 max-w-xs w-full bg-[#F9F9F9] bg-opacity-5 shadow-xl overflow-y-auto">
               <div className="p-6">
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="absolute top-5 right-5 text-gray-500 hover:text-gray-600 focus:outline-none focus:ring"
+                  className="absolute top-5 right-5 text-[#F9F9F9] hover:text-gray-600 focus:outline-none focus:ring"
                 >
                   <X size={24} />
                 </button>
