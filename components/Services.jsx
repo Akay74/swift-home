@@ -1,7 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import dynamic from 'next/dynamic';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+const Carousel = dynamic(() => import('react-responsive-carousel').then((mod) => mod.Carousel), {
+  ssr: false,
+});
 
 const ServiceCard = ({ title, description, imageSrc }) => (
   <div className="bg-white rounded-lg shadow-md p-6 mx-auto max-w-sm">
@@ -24,32 +28,32 @@ const Services = () => {
     {
       title: "Brand management",
       description: "We build and maintain your brand's identity, enhancing visibility and audience connection.",
-      imageSrc: "/../assets/placeholder.jpg"
+      imageSrc: "/assets/placeholder.jpg"
     },
     {
       title: "Product design",
       description: "We create intuitive and visually engaging designs that resonate with your users.",
-      imageSrc: "/../assets/placeholder.jpg"
+      imageSrc: "/assets/placeholder.jpg"
     },
     {
       title: "Product development",
       description: "We bring ideas to life with innovative products aligned with market needs.",
-      imageSrc: "/../assets/placeholder.jpg"
+      imageSrc: "/assets/placeholder.jpg"
     },
     {
       title: "Data analysis",
       description: "We turn data into actionable insights to support informed decision-making.",
-      imageSrc: "/../assets/placeholder.jpg"
+      imageSrc: "/assets/placeholder.jpg"
     },
     {
       title: "Product management",
       description: "We manage your product's lifecycle, ensuring market success and user satisfaction.",
-      imageSrc: "/../assets/placeholder.jpg"
+      imageSrc: "/assets/placeholder.jpg"
     },
     {
       title: "IT consulting",
       description: "We offer expert guidance to optimize your IT infrastructure and drive business growth.",
-      imageSrc: "/../assets/placeholder.jpg"
+      imageSrc: "/assets/placeholder.jpg"
     }
   ];
 
@@ -59,7 +63,7 @@ const Services = () => {
       <h2 className="text-xl text-gray-600 text-center mb-12">
         Empowering Your Business with Cutting-Edge Tech Solutions
       </h2>
-      
+     
       <Carousel
         showArrows={true}
         showStatus={false}
