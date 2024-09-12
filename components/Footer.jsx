@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Logo from '../assets/logo.png';
 import { Linkedin, Instagram, Facebook, Twitter, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
@@ -16,7 +17,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 text-sm text-[#C1BFBF]">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <Image src="/../assets/logo.jpg" alt="Logo" width={80} height={40} />
+          <Image src={Logo} alt="Logo" width={80} height={40} />
         </div>
 
         {/* Navigation */}
