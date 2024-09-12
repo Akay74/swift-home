@@ -118,7 +118,7 @@ const Hero = () => {
       </nav>
 
       {/* Main Hero Section */}
-      <div className="max-w-6xl mx-auto px-4 py-20">
+      <div className="max-w-6xl mx-auto px-4 py-18">
         <h1 className="text-[38px] md:text-5xl font-bold text-[#F9F9F9]">
           Innovating the future,
         </h1>
