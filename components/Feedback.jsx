@@ -51,10 +51,10 @@ const Feedback = () => {
   };
 
   return (
-    <div className="bg-gray-100 py-16">
+    <div className="py-10">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-2">Our Customer Feedback</h2>
-        <p className="text-xl text-gray-600 text-center mb-12">Don't take our word for it. Trust our customers.</p>
+        <h2 className="text-3xl font-bold text-center text-[#F9F9F9] mb-2">Our Customer Feedback</h2>
+        <p className="text-[14px] text-[#C1BFBF] text-center mb-12">Don't take our word for it. Trust our customers.</p>
 
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="flex items-center mb-4">

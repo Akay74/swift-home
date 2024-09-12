@@ -12,17 +12,17 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-100 py-8">
-      <div className="max-w-6xl mx-auto px-4">
+    <footer className="py-8">
+      <div className="max-w-6xl mx-auto px-4 text-sm text-[#C1BFBF]">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <Image src="/../assets/placeholder.jpg" alt="Logo" width={80} height={40} />
+          <Image src="/../assets/logo.jpg" alt="Logo" width={80} height={40} />
         </div>
 
         {/* Navigation */}
-        <nav className="flex justify-center space-x-6 mb-6">
+        <nav className="flex justify-center space-x-2.5 mb-6">
           {navItems.map((item) => (
-            <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-gray-600 hover:text-gray-900">
+            <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="hover:text-gray-600">
               {item}
             </a>
           ))}
@@ -31,14 +31,14 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex justify-center space-x-6 mb-6">
           {socialIcons.map(({ Icon, href }) => (
-            <a key={href} href={href} className="text-gray-600 hover:text-gray-900">
-              <Icon size={24} />
+            <a key={href} href={href} className="text-[#C1BFBF] hover:text-gray-600">
+              <Icon size={22} />
             </a>
           ))}
         </div>
 
         {/* Contact Information */}
-        <div className="flex justify-center items-center space-x-6 text-gray-600">
+        <div className="flex justify-between items-center space-x-4">
           <div className="flex items-center">
             <Mail size={20} className="mr-2" />
             <span>SwiftTech@gmail.com</span>

@@ -20,7 +20,7 @@ const Hero = () => {
   const navItems = ['Home', 'About us', 'Our services', 'Contact us', 'Reviews'];
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-hero">
       <nav className="bg-white shadow-md">
         {/* Navbar content (unchanged) */}
         <div className="max-w-6xl mx-auto px-4">
@@ -37,7 +37,7 @@ const Hero = () => {
 
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <img className="h-8 w-auto" src="/api/placeholder/32/32" alt="Logo" />
+              <img className="h-8 w-auto" src="/assets/logo.jpg" alt="Logo" />
             </div>
 
             {/* Desktop menu */}
@@ -71,15 +71,15 @@ const Hero = () => {
                   {item}
                 </NavItem>
               ))}
-              <button className="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700 transition-colors">
-                WORK WITH US
+              <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-4 py-2 rounded-3xl text-md hover:cursor-pointer transition-colors">
+                Work with us
               </button>
             </div>
 
             {/* Mobile "Work with us" button */}
             <div className="flex md:hidden">
-              <button className="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700 transition-colors">
-                WORK WITH US
+              <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-4 py-2 rounded-3xl text-md hover:cursor-pointer transition-colors">
+                Work with us
               </button>
             </div>
           </div>
@@ -118,12 +118,13 @@ const Hero = () => {
       </nav>
 
       {/* Main Hero Section */}
-      <div className="max-w-6xl mx-auto px-4 py-20 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-          Innovating the future, one solution at a time
+      <div className="max-w-6xl mx-auto px-4 py-20">
+        <h1 className="text-[38px] md:text-5xl font-bold text-[#F9F9F9]">
+          Innovating the future,
         </h1>
-        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
-          Bridging ideas with innovation, we redefine possibilities to turn your vision into reality. 
+        <h1 className="text-[32px] md:text-5xl font-bold text-[#4C80FF]">one solution at a time</h1>
+        <p className="text-xl md:text-2xl text-[#C1BFBF] max-w-3xl mx-auto">
+          Bridging ideas with innovation, we redefine possibilities to turn your vision into <span className="text-[#4C80FF]">reality</span>. 
           Partner with us to unlock new levels of efficiency and growth.
         </p>
       </div>

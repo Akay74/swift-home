@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-2 text-center sm:text-4xl">Contact Us</h1>
-      <h2 className="text-xl mb-6 text-center text-gray-600 sm:text-2xl">
+      <h2 className="text-xl mb-6 text-center text-[14px] text-[#C1BFBF] sm:text-[14px]">
         Cultivating Connections: Reach Out and Connect With Us.
       </h2>
 
@@ -50,10 +50,10 @@ const Contact = () => {
           ></textarea>
         </div>
 
-        <div className="mt-6 text-right">
+        <div className="mt-6 text-center">
           <button
             type="submit"
-            className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-colors"
+            className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-[#F9F9F9] text-lg font-bold px-6 py-2 rounded-lg hover:cursor-pointer transition-colors"
           >
             Send
           </button>
