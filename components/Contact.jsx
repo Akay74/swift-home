@@ -15,20 +15,20 @@ const Contact = () => {
           <input
             type="text"
             placeholder="Name"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border-none outline-none rounded bg-[#F9F9F9] bg-opacity-10"
           />
           <input
             type="email"
             placeholder="Email"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border-none outline-none rounded bg-[#F9F9F9] bg-opacity-10"
           />
           <input
             type="tel"
             placeholder="Phone number"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border-none outline-none rounded bg-[#F9F9F9] bg-opacity-10"
           />
           <select
-            className="w-full p-2 border border-gray-300 rounded bg-white"
+            className="w-full p-3 text-[#C1BFBF] border-none outline-none rounded bg-[#F9F9F9] bg-opacity-10"
             defaultValue=""
           >
             <option value="" disabled>Service of Interest</option>
@@ -41,12 +41,12 @@ const Contact = () => {
           <input
             type="text"
             placeholder="Timeline"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border-none outline-none rounded bg-[#F9F9F9] bg-opacity-10"
           />
           <textarea
             placeholder="Project Details"
-            rows="4"
-            className="w-full p-2 border border-gray-300 rounded"
+            rows="5"
+            className="w-full p-3 border-none outline-none rounded bg-[#F9F9F9] bg-opacity-10"
           ></textarea>
         </div>
 
