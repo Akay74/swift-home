@@ -21,7 +21,7 @@ const Hero = () => {
 
   return (
     <div className="bg-hero">
-      <nav className="bg-white shadow-md">
+      <nav className="shadow-md">
         {/* Navbar content (unchanged) */}
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
