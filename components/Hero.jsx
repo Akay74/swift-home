@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import HeroImg from '../assets/hero.jpg';
 import Logo from '../assets/logo.png';
 
 const NavItem = ({ href, children, active }) => (
@@ -22,7 +23,12 @@ const Hero = () => {
   const navItems = ['Home', 'About us', 'Our services', 'Contact us', 'Reviews'];
 
   return (
-    <div className="bg-hero">
+    <div style={{
+      backgroundImage: HeroImg,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    }} className='h-[45vh]'>
       <nav className="shadow-md">
         {/* Navbar content (unchanged) */}
         <div className="max-w-6xl mx-auto px-4">
@@ -38,7 +44,7 @@ const Hero = () => {
             </div>
 
             {/* Logo */}
-            <div className="flex-shrink-0 flex ml-[20%]">
+            <div className="flex-shrink-0 flex md:hidden">
               <Image className="h-8 w-auto" src={Logo} alt="Logo" />
             </div>
 
@@ -58,7 +64,7 @@ const Hero = () => {
 
             {/* Logo for larger screens */}
             <div className="hidden md:flex md:items-center">
-              <img className="h-8 w-auto" src="/api/placeholder/32/32" alt="Logo" />
+              <Image className="h-8 w-auto" src={Logo} alt="Logo" />
             </div>
 
             {/* Desktop menu (continued) and button */}
@@ -80,7 +86,7 @@ const Hero = () => {
 
             {/* Mobile "Work with us" button */}
             <div className="flex md:hidden">
-              <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-4 py-2 rounded-3xl text-md hover:cursor-pointer transition-colors">
+              <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-1.5 py-1.5 rounded-3xl text-sm hover:cursor-pointer transition-colors">
                 Work with us
               </button>
             </div>
@@ -125,7 +131,7 @@ const Hero = () => {
           Innovating the future,
         </h1>
         <h1 className="text-[32px] md:text-5xl font-bold text-[#4C80FF]">one solution at a time</h1>
-        <p className="text-xl md:text-2xl text-[#C1BFBF] max-w-3xl mx-auto">
+        <p className="text-md md:text-2xl text-[#C1BFBF] max-w-3xl mx-auto">
           Bridging ideas with innovation, we redefine possibilities to turn your vision into <span className="text-[#4C80FF]">reality</span>. 
           Partner with us to unlock new levels of efficiency and growth.
         </p>
