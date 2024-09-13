@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import HeroImg from '../assets/hero.jpg';
+import HamImg from '../assets/hamburger.png';
 import Logo from '../assets/logo.png';
 
 const NavItem = ({ href, children, active }) => (
@@ -34,7 +35,7 @@ const Hero = () => {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-gray-500 hover:text-gray-600 focus:outline-none focus:ring shadow-md"
               >
-                <Menu size={24} />
+                <Image src={HamImg} size={24} />
               </button>
             </div>
 

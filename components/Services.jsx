@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import PlaceholderImg from '../assets/placeholder.jpg';
+import BrandMgtImg from '../assets/brand-mgt.svg';
 
 const ServiceCard = ({ title, description, imageSrc }) => (
   <div className="bg-[#0D1827] rounded-[30px] mb-6 shadow-md px-4 py-12 mx-auto w-[80%] text-center">
@@ -24,32 +25,32 @@ const Services = () => {
     {
       title: "Brand management",
       description: "We build and maintain your brand's identity, enhancing visibility and audience connection.",
-      imageSrc: PlaceholderImg
+      imageSrc: BrandMgtImg
     },
     {
       title: "Product design",
       description: "We create intuitive and visually engaging designs that resonate with your users.",
-      imageSrc: PlaceholderImg
+      imageSrc: BrandMgtImg
     },
     {
       title: "Product development",
       description: "We bring ideas to life with innovative products aligned with market needs.",
-      imageSrc: PlaceholderImg
+      imageSrc: BrandMgtImg
     },
     {
       title: "Data analysis",
       description: "We turn data into actionable insights to support informed decision-making.",
-      imageSrc: PlaceholderImg
+      imageSrc: BrandMgtImg
     },
     {
       title: "Product management",
       description: "We manage your product's lifecycle, ensuring market success and user satisfaction.",
-      imageSrc: PlaceholderImg
+      imageSrc: BrandMgtImg
     },
     {
       title: "IT consulting",
       description: "We offer expert guidance to optimize your IT infrastructure and drive business growth.",
-      imageSrc: PlaceholderImg
+      imageSrc: BrandMgtImg
     }
   ];
 
