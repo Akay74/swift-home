@@ -44,8 +44,8 @@ const Hero = () => {
             </div>
 
             {/* Logo */}
-            <div className="flex-shrink-0 flex md:hidden">
-              <Image className="h-8 w-auto" src={Logo} alt="Logo" />
+            <div className="flex-shrink-0 flex items-top ml-14 md:hidden">
+              <Image className="h-6 w-auto" src={Logo} alt="Logo" />
             </div>
 
             {/* Desktop menu */}
