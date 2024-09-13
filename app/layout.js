@@ -8,8 +8,8 @@ const lato = Lato({
 
 
 export const metadata = {
-  title: "AEIS tech homepage",
-  description: "Homepage for AEIS technologies",
+  title: "AEIS Tech homepage",
+  description: "Homepage for AEIS Technologies",
 };
 
 export default function RootLayout({ children }) {
