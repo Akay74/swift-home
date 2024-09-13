@@ -10,7 +10,7 @@ const StarRating = ({ rating }) => {
       {[...Array(5)].map((_, i) => (
         <Star
           key={i}
-          size={20}
+          size={12}
           fill={i < rating ? "#C68635" : "none"}
           stroke={i < rating ? "#C68635" : "#C68635"}
         />
@@ -52,26 +52,25 @@ const Feedback = () => {
   };
 
   return (
-    <div className="py-10">
+    <div className="pt-10 pb-20">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-[#F9F9F9] mb-2">Our Customer Feedback</h2>
         <p className="text-[14px] text-[#C1BFBF] text-center mb-12">Don't take our word for it. Trust our customers.</p>
 
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <div className="flex items-center mb-4">
-            <div className="w-16 h-16 relative mr-4">
+        <div className="rounded-lg shadow-lg p-5 border-[1px] border-[#4C80FF] w-[48%]">
+          <div className="flex items-top mb-4">
+            <div className="w-8 h-8 relative mr-4">
               <Image
                 src={feedbacks[currentFeedback].image}
                 alt={feedbacks[currentFeedback].name}
                 layout="fill"
                 objectFit="cover"
-                className="rounded-full"
               />
             </div>
             <StarRating rating={feedbacks[currentFeedback].rating} />
           </div>
-          <h3 className="text-xl font-semibold mb-2">{feedbacks[currentFeedback].name}</h3>
-          <p className="text-gray-600 mb-6">{feedbacks[currentFeedback].comment}</p>
+          <h3 className="text-l font-semibold mb-2">{feedbacks[currentFeedback].name}</h3>
+          <p className="text-[#C1BFBF] text-sm">{feedbacks[currentFeedback].comment}</p>
         </div>
 
         <div className="flex justify-end mt-6">

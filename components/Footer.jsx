@@ -13,15 +13,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-8">
+    <footer className="py-8 border-t-[1px] border-[#4C80FF]">
       <div className="max-w-6xl mx-auto px-4 text-sm text-[#C1BFBF]">
         {/* Logo */}
-        <div className="flex justify-center mb-6">
-          <Image src={Logo} alt="Logo" width={80} height={40} />
+        <div className="flex justify-center mb-3">
+          <Image src={Logo} alt="Logo" width={160} height={120} />
         </div>
 
         {/* Navigation */}
-        <nav className="flex justify-center space-x-2.5 mb-6">
+        <nav className="flex justify-center space-x-2.5 mb-3">
           {navItems.map((item) => (
             <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="hover:text-gray-600">
               {item}
@@ -30,7 +30,7 @@ const Footer = () => {
         </nav>
 
         {/* Social Icons */}
-        <div className="flex justify-center space-x-6 mb-6">
+        <div className="flex justify-center space-x-6 mb-3">
           {socialIcons.map(({ Icon, href }) => (
             <a key={href} href={href} className="text-[#C1BFBF] hover:text-gray-600">
               <Icon size={22} />
