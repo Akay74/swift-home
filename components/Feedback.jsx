@@ -11,8 +11,8 @@ const StarRating = ({ rating }) => {
         <Star
           key={i}
           size={20}
-          fill={i < rating ? "#FFD700" : "none"}
-          stroke={i < rating ? "#FFD700" : "#CBD5E0"}
+          fill={i < rating ? "#C68635" : "none"}
+          stroke={i < rating ? "#C68635" : "#C68635"}
         />
       ))}
     </div>
