@@ -19,6 +19,24 @@ const StarRating = ({ rating }) => {
   );
 };
 
+const FeedbackCard = ({ feedback }) => (
+  <div className="rounded-lg shadow-lg p-5 border-[1px] border-[#4C80FF] w-[48%]">
+    <div className="flex items-top mb-4">
+      <div className="w-8 h-8 relative mr-4">
+        <Image
+          src={feedback.image}
+          alt={feedback.name}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+      <StarRating rating={feedback.rating} />
+    </div>
+    <h3 className="text-l font-semibold mb-2">{feedback.name}</h3>
+    <p className="text-[#C1BFBF] text-sm">{feedback.comment}</p>
+  </div>
+);
+
 const Feedback = () => {
   const feedbacks = [
     {
@@ -38,17 +56,23 @@ const Feedback = () => {
       image: placeholderImg,
       rating: 5,
       comment: "Their team went above and beyond our expectations. We're already seeing great results!"
+    },
+    {
+      name: "Alice Brown",
+      image: placeholderImg,
+      rating: 4,
+      comment: "Great experience working with this team. They're responsive and deliver quality results."
     }
   ];
 
-  const [currentFeedback, setCurrentFeedback] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextFeedback = () => {
-    setCurrentFeedback((prev) => (prev + 1) % feedbacks.length);
+    setCurrentIndex((prev) => (prev + 2) % feedbacks.length);
   };
 
   const prevFeedback = () => {
-    setCurrentFeedback((prev) => (prev - 1 + feedbacks.length) % feedbacks.length);
+    setCurrentIndex((prev) => (prev - 2 + feedbacks.length) % feedbacks.length);
   };
 
   return (
@@ -57,20 +81,9 @@ const Feedback = () => {
         <h2 className="text-3xl font-bold text-center text-[#F9F9F9] mb-2">Our Customer Feedback</h2>
         <p className="text-[14px] text-[#C1BFBF] text-center mb-12">Don't take our word for it. Trust our customers.</p>
 
-        <div className="rounded-lg shadow-lg p-5 border-[1px] border-[#4C80FF] w-[48%]">
-          <div className="flex items-top mb-4">
-            <div className="w-8 h-8 relative mr-4">
-              <Image
-                src={feedbacks[currentFeedback].image}
-                alt={feedbacks[currentFeedback].name}
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-            <StarRating rating={feedbacks[currentFeedback].rating} />
-          </div>
-          <h3 className="text-l font-semibold mb-2">{feedbacks[currentFeedback].name}</h3>
-          <p className="text-[#C1BFBF] text-sm">{feedbacks[currentFeedback].comment}</p>
+        <div className="flex justify-between">
+          <FeedbackCard feedback={feedbacks[currentIndex]} />
+          <FeedbackCard feedback={feedbacks[(currentIndex + 1) % feedbacks.length]} />
         </div>
 
         <div className="flex justify-end mt-6">
