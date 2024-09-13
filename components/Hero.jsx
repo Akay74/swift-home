@@ -126,11 +126,11 @@ const Hero = () => {
       </nav>
 
       {/* Main Hero Section */}
-      <div className="max-w-6xl mx-auto px-4 py-18">
+      <div className="max-w-6xl mx-auto mt-2 px-4 py-18">
         <h1 className="text-[38px] md:text-5xl font-bold text-[#F9F9F9]">
           Innovating the future,
         </h1>
-        <h1 className="text-[32px] md:text-5xl font-bold text-[#4C80FF]">one solution at a time</h1>
+        <h1 className="text-[32px] md:text-5xl font-bold bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-transparent bg-clip-text">one solution at a time</h1>
         <p className="text-md md:text-2xl text-[#C1BFBF] max-w-3xl mx-auto">
           Bridging ideas with innovation, we redefine possibilities to turn your vision into <span className="text-[#4C80FF]">reality</span>. 
           Partner with us to unlock new levels of efficiency and growth.

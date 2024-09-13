@@ -100,13 +100,13 @@ const Feedback = () => {
         <div className="flex justify-end space-x-2">
           <button
             onClick={prevFeedback}
-            className="flex text-[#C1BFBF] px-3 py-1 rounded-md border border-[#C1BFBF] hover:border-[#F9F9F9] transition-colors"
+            className="flex text-[#C1BFBF] px-3 py-1 rounded-md border border-[#C1BFBF] hover:border-[#F9F9F9] hover:text-[#F9F9F9] transition-colors"
           >
             <ChevronLeft size={24} /> Previous
           </button>
           <button
             onClick={nextFeedback}
-            className="flex text-[#C1BFBF] px-3 py-1 rounded-md border border-[#C1BFBF] hover:border-[#F9F9F9] transition-colors"
+            className="flex text-[#C1BFBF] px-3 py-1 rounded-md border border-[#C1BFBF] hover:border-[#F9F9F9] hover:text-[#F9F9F9] transition-colors"
           >
             Next <ChevronRight size={24} />
           </button>
