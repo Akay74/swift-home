@@ -28,7 +28,7 @@ const Hero = () => {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
-    }} className='h-[45vh]'>
+    }} className='pb-12'>
       <nav className="shadow-md">
         {/* Navbar content (unchanged) */}
         <div className="max-w-6xl mx-auto px-4">
