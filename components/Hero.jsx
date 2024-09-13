@@ -23,12 +23,7 @@ const Hero = () => {
   const navItems = ['Home', 'About us', 'Our services', 'Contact us', 'Reviews'];
 
   return (
-    <div style={{
-      backgroundImage: HeroImg,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-    }} className='pb-12'>
+    <div className='bg-hero pb-12'>
       <nav className="shadow-md">
         {/* Navbar content (unchanged) */}
         <div className="max-w-6xl mx-auto px-4">
@@ -131,7 +126,7 @@ const Hero = () => {
           Innovating the future,
         </h1>
         <h1 className="text-[32px] md:text-5xl font-bold bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-transparent bg-clip-text">one solution at a time</h1>
-        <p className="text-md md:text-2xl text-[#C1BFBF] max-w-3xl mx-auto">
+        <p className="text-md md:text-2xl text-[#C1BFBF] max-w-3xl">
           Bridging ideas with innovation, we redefine possibilities to turn your vision into <span className="text-[#4C80FF]">reality</span>. 
           Partner with us to unlock new levels of efficiency and growth.
         </p>
