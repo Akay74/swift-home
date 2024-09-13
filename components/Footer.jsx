@@ -1,15 +1,21 @@
+'use client'
+
 import React from 'react';
 import Image from 'next/image';
 import Logo from '../assets/logo.png';
-import { Linkedin, Instagram, Facebook, Twitter, Mail, Phone } from 'lucide-react';
+import LinkedinIcon from '../assets/Linkedin.svg';
+import InstagramIcon from '../assets/Ig.svg';
+import FacebookIcon from '../assets/Facebook.svg';
+import TwitterIcon from '../assets/X.svg';
+import { Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   const navItems = ['Home', 'Our Services', 'About us', 'Contact us', 'Reviews'];
   const socialIcons = [
-    { Icon: Linkedin, href: '#' },
-    { Icon: Instagram, href: '#' },
-    { Icon: Facebook, href: '#' },
-    { Icon: Twitter, href: '#' },
+    { Icon: LinkedinIcon, href: '#' },
+    { Icon: InstagramIcon, href: '#' },
+    { Icon: FacebookIcon, href: '#' },
+    { Icon: TwitterIcon, href: '#' },
   ];
 
   return (
@@ -33,7 +39,7 @@ const Footer = () => {
         <div className="flex justify-center space-x-6 mb-3">
           {socialIcons.map(({ Icon, href }) => (
             <a key={href} href={href} className="text-[#C1BFBF] hover:text-gray-600">
-              <Icon size={22} />
+              <Image src={Icon} alt="Social Icon" width={22} height={22} />
             </a>
           ))}
         </div>
