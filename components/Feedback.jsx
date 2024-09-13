@@ -81,23 +81,34 @@ const Feedback = () => {
         <h2 className="text-3xl font-bold text-center text-[#F9F9F9] mb-2">Our Customer Feedback</h2>
         <p className="text-[14px] text-[#C1BFBF] text-center mb-12">Don't take our word for it. Trust our customers.</p>
 
-        <div className="flex justify-between">
+        <div className="flex justify-between mb-8">
           <FeedbackCard feedback={feedbacks[currentIndex]} />
           <FeedbackCard feedback={feedbacks[(currentIndex + 1) % feedbacks.length]} />
         </div>
 
-        <div className="flex justify-end mt-6">
+        <div className="flex justify-center mb-4">
+          {[...Array(feedbacks.length / 2)].map((_, i) => (
+            <div
+              key={i}
+              className={`w-2 h-2 rounded-full mx-1 ${
+                i === currentIndex / 2 ? 'bg-[#4C80FF]' : 'bg-gray-400'
+              }`}
+            ></div>
+          ))}
+        </div>
+
+        <div className="flex justify-end space-x-2">
           <button
             onClick={prevFeedback}
-            className="bg-blue-500 text-white p-2 rounded-full mr-2 hover:bg-blue-600 transition-colors"
+            className="flex text-white px-3 py-1 rounded-md border border-[#4C80FF] hover:bg-[#4C80FF] transition-colors"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={24} /> Previous
           </button>
           <button
             onClick={nextFeedback}
-            className="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition-colors"
+            className="flex text-white px-3 py-1 rounded-md border border-[#4C80FF] hover:bg-[#4C80FF] transition-colors"
           >
-            <ChevronRight size={24} />
+            Next <ChevronRight size={24} />
           </button>
         </div>
       </div>
