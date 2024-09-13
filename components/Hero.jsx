@@ -23,7 +23,7 @@ const Hero = () => {
   const navItems = ['Home', 'About us', 'Our services', 'Contact us', 'Reviews'];
 
   return (
-    <div className='bg-hero pb-12'>
+    <div className='bg-hero pb-12' id='home'>
       <nav className="shadow-md">
         {/* Navbar content (unchanged) */}
         <div className="max-w-6xl mx-auto px-4">
