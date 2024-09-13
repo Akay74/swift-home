@@ -6,12 +6,13 @@ import HeroImg from '../assets/hero.jpg';
 import HamImg from '../assets/hamburger.png';
 import Logo from '../assets/logo.png';
 
-const NavItem = ({ href, children, active }) => (
+const NavItem = ({ href, children, active, onClick }) => (
   <a
     href={href}
     className={`block py-2 px-4 text-lg md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ${
       active ? 'border-b-3 border-[#F9F9F9]' : ''
     }`}
+    onClick={onClick}
   >
     {children}
   </a>
@@ -22,6 +23,17 @@ const Hero = () => {
   const [activeItem, setActiveItem] = useState('Home');
 
   const navItems = ['Home', 'About us', 'Our services', 'Contact us', 'Reviews'];
+
+  const handleNavItemClick = (item) => {
+    setActiveItem(item);
+    setIsMenuOpen(false);
+
+    // Smooth scroll to the section
+    const element = document.getElementById(item.toLowerCase().replace(' ', '-'));
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className='bg-hero pb-12' id='home'>
@@ -51,7 +63,10 @@ const Hero = () => {
                   key={item}
                   href={`#${item.toLowerCase().replace(' ', '-')}`}
                   active={activeItem === item}
-                  onClick={() => setActiveItem(item)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavItemClick(item);
+                  }}
                 >
                   {item}
                 </NavItem>
@@ -70,18 +85,16 @@ const Hero = () => {
                   key={item}
                   href={`#${item.toLowerCase().replace(' ', '-')}`}
                   active={activeItem === item}
-                  onClick={() => setActiveItem(item)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavItemClick(item);
+                  }}
                 >
                   {item}
                 </NavItem>
               ))}
               <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-4 py-2 rounded-3xl text-md hover:cursor-pointer transition-colors"
-                onClick={() => {
-                  const element = document.getElementById('contact-us');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
+                onClick={() => handleNavItemClick('Contact us')}
               >
                 Work with us
               </button>
@@ -90,12 +103,7 @@ const Hero = () => {
             {/* Mobile "Work with us" button */}
             <div className="flex md:hidden">
               <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-1.5 py-1.5 rounded-3xl text-sm hover:cursor-pointer transition-colors"
-                onClick={() => {
-                  const element = document.getElementById('contact-us');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
+                onClick={() => handleNavItemClick('Contact us')}
               >
                 Work with us
               </button>
@@ -120,9 +128,9 @@ const Hero = () => {
                       key={item}
                       href={`#${item.toLowerCase().replace(' ', '-')}`}
                       active={activeItem === item}
-                      onClick={() => {
-                        setActiveItem(item);
-                        setIsMenuOpen(false);
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavItemClick(item);
                       }}
                     >
                       {item}
