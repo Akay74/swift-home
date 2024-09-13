@@ -74,14 +74,28 @@ const Hero = () => {
                   {item}
                 </NavItem>
               ))}
-              <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-4 py-2 rounded-3xl text-md hover:cursor-pointer transition-colors">
+              <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-4 py-2 rounded-3xl text-md hover:cursor-pointer transition-colors"
+                onClick={() => {
+                  const element = document.getElementById('contact-us');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Work with us
               </button>
             </div>
 
             {/* Mobile "Work with us" button */}
             <div className="flex md:hidden">
-              <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-1.5 py-1.5 rounded-3xl text-sm hover:cursor-pointer transition-colors">
+              <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-1.5 py-1.5 rounded-3xl text-sm hover:cursor-pointer transition-colors"
+                onClick={() => {
+                  const element = document.getElementById('contact-us');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Work with us
               </button>
             </div>
