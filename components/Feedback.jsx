@@ -32,7 +32,7 @@ const FeedbackCard = ({ feedback }) => (
       </div>
       <StarRating rating={feedback.rating} />
     </div>
-    <h3 className="text-l font-semibold mb-2">{feedback.name}</h3>
+    <h3 className="text-l text-[#F9F9F9] font-semibold mb-2">{feedback.name}</h3>
     <p className="text-[#C1BFBF] text-sm">{feedback.comment}</p>
   </div>
 );

@@ -5,7 +5,7 @@ const Contact = () => {
 
   return (
     <div className="container mx-auto px-4 py-8" id='contact-us'>
-      <h1 className="text-3xl font-bold mb-2 text-center sm:text-4xl">Contact Us</h1>
+      <h1 className="text-3xl font-bold text-[#F9F9F9] mb-2 text-center sm:text-4xl">Contact Us</h1>
       <h2 className="mb-6 text-center text-[14px] text-[#C1BFBF]">
         Cultivating Connections: Reach Out and Connect With Us.
       </h2>
