@@ -57,7 +57,7 @@ const Hero = () => {
             </div>
 
             {/* Desktop menu */}
-            <div className="hidden md:flex md:items-center md:space-x-4">
+            <div className="hidden md:flex md:items-center md:space-x-4 text-[#F9F9F9]">
               {navItems.slice(0, 3).map((item) => (
                 <NavItem
                   key={item}
@@ -79,7 +79,7 @@ const Hero = () => {
             </div>
 
             {/* Desktop menu (continued) and button */}
-            <div className="hidden md:flex md:items-center md:space-x-4">
+            <div className="hidden md:flex md:items-center md:space-x-4 text-[#F9F9F9]">
               {navItems.slice(3).map((item) => (
                 <NavItem
                   key={item}
@@ -122,7 +122,7 @@ const Hero = () => {
                 >
                   <X size={24} />
                 </button>
-                <nav className="mt-8">
+                <nav className="mt-8 text-[#F9F9F9]">
                   {navItems.map((item) => (
                     <NavItem
                       key={item}
