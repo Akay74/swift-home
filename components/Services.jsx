@@ -6,7 +6,7 @@ import PlaceholderImg from '../assets/placeholder.jpg';
 import BrandMgtImg from '../assets/brand-mgt.svg';
 
 const ServiceCard = ({ title, description, imageSrc }) => (
-  <div className="bg-[#0D1827] rounded-[30px] mb-6 shadow-md px-4 py-12 mx-auto w-[80%] text-center">
+  <div className="bg-[#0D1827] rounded-[30px] mb-6 shadow-md px-8 py-12 mx-auto w-[80%] md:w-[100%] text-center">
     <div className="w-6 h-6 mb-4 mx-auto">
       <Image
         src={imageSrc}
@@ -15,8 +15,8 @@ const ServiceCard = ({ title, description, imageSrc }) => (
         className="rounded-t-lg"
       />
     </div>
-    <h3 className="text-[24px] font-semibold mb-2 bg-gradient-to-b from-[#4CFFD6] to-[#4C80FF] text-transparent bg-clip-text">{title}</h3>
-    <p className="text-[14px] text-[#C1BFBF]">{description}</p>
+    <h3 className="text-[22px] font-semibold mb-2 bg-gradient-to-b from-[#4CFFD6] to-[#4C80FF] text-transparent bg-clip-text">{title}</h3>
+    <p className="text-[14px] text-[#C1BFBF] md:text-[16px]">{description}</p>
   </div>
 );
 
@@ -127,9 +127,9 @@ const Services = () => {
   }, [services.length]);
 
   return (
-    <div className="container mx-auto mt-16 mb-6 px-4 py-6 bg-[#050D18]" id='our-services'>
-      <h1 className="text-3xl text-[#F9F9F9] font-bold text-center mb-2">Our services</h1>
-      <h2 className="text-sm text-gray-600 text-center mb-6">
+    <div className="mx-auto mt-16 mb-6 px-3 py-6 bg-[#050D18]" id='our-services'>
+      <h1 className="text-3xl text-[#F9F9F9] font-bold text-center mb-2 md:text-[48px]">Our services</h1>
+      <h2 className="text-[12px] text-gray-600 text-center mb-6 md:mb-8 md:mt-4 md:text-[20px]">
         Empowering Your Business with Cutting-Edge Tech Solutions
       </h2>
       
