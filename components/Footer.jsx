@@ -27,7 +27,7 @@ const Footer = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="flex justify-center space-x-2.5 mb-3">
+        <nav className="flex justify-center space-x-2.5 mb-3 md:space-x-12">
           {navItems.map((item) => (
             <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="hover:text-gray-600">
               {item}
@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
 
         {/* Contact Information */}
-        <div className="flex justify-between items-center space-x-4">
+        <div className="flex justify-between items-center space-x-4 md:w-[30%] md:mx-auto">
           <div className="flex items-center">
             <Mail size={20} className="mr-2" />
             <span>SwiftTech@gmail.com</span>
