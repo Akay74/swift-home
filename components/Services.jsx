@@ -128,7 +128,7 @@ const Services = () => {
 
   return (
     <div className="mx-auto mt-16 mb-6 px-3 py-6 bg-[#050D18]" id='our-services'>
-      <h1 className="text-3xl text-[#F9F9F9] font-bold text-center mb-2 md:text-[48px]">Our services</h1>
+      <h1 className="text-3xl text-[#F9F9F9] font-bold text-center mb-2 md:text-[64px]">Our services</h1>
       <h2 className="text-[12px] text-gray-600 text-center mb-6 md:mb-8 md:mt-4 md:text-[20px]">
         Empowering Your Business with Cutting-Edge Tech Solutions
       </h2>
