@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "hero": "url('../assets/hero.png')",
-        "hero2": "url('../assets/hero2.jpg)",
+        "hero2": "url('../assets/hero2.png')",
       },
       fontFamily: {
         sans: ['var(--font-lato)'],
