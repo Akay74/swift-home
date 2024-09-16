@@ -35,7 +35,7 @@ const Hero = () => {
   };
 
   return (
-    <div className='m-3 md:m-5 rounded-t-[20px] bg-hero md:bg-hero2 bg-cover bg-no-repeat md:px-[4rem] md:pb-[13rem] pb-12' id='home'>
+    <div className='m-3 md:m-5 rounded-t-[20px] bg-hero bg-cover bg-no-repeat md:bg-hero2 md:bg-cover md:px-[4rem] md:pb-[13rem] pb-12' id='home'>
       <nav>
         {/* Navbar content (unchanged) */}
         <div className="max-w-6xl mx-auto px-4 md:py-2">
