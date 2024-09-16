@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "hero": "url('../assets/hero.jpg')",
+        "hero": "url('../assets/hero.png')",
+        "hero2": "url('../assets/hero2.jpg)",
       },
       fontFamily: {
         sans: ['var(--font-lato)'],
