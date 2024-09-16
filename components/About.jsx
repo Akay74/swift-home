@@ -11,10 +11,10 @@ const About = () => {
         <p>In today's ever-changing global market, thriving requires intense collaboration, creative thinking, and cutting-edge digital upgrades. We are ready to be your partner in this journey, offering solutions that not only meet your needs but also set you apart from the competition.</p>
       </div>
 
-      <h2 className="text-2xl font-semibold mb-4 md:text-[48px]">What we do</h2>
+      <h2 className="text-2xl font-semibold mb-4 md:text-[48px] md:mt-16">What we do</h2>
       <p className="mb-8 md:text-[20px]">We specialize in providing end-to-end tech services encompassing design, development, and digital marketing. From crafting captivating brand identities to developing robust web and mobile applications, we offer a comprehensive suite of services to propel your business forward in the digital age.</p>
 
-      <h2 className="text-2xl font-semibold mb-4 md:text-[48px]">Why choose us?</h2>
+      <h2 className="text-2xl font-semibold mb-4 md:text-[48px] md:mt-16">Why choose us?</h2>
       <div className="md:text-[20px]">
         <p className="mb-2">
           <span className="font-semibold">Innovation:</span> In a rapidly evolving global business environment, we set the pace by driving thought leadership and staying ahead of industry trends. Our commitment to employing cutting-edge strategies ensures that we deliver unmatched value, fostering a community of thriving businesses.
