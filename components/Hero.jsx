@@ -35,23 +35,23 @@ const Hero = () => {
   };
 
   return (
-    <div className='m-3 md:m-5 rounded-t-[20px] bg-hero bg-cover bg-no-repeat md:bg-hero2 md:bg-cover md:px-[4rem] md:pb-[13rem] pb-12' id='home'>
+  <div className='m-3 md:m-5 rounded-t-[20px] bg-hero bg-cover bg-no-repeat md:bg-hero2 md:bg-cover md:px-[4rem] md:pb-[13rem] pb-12' id='home'>
       <nav>
         {/* Navbar content (unchanged) */}
         <div className="max-w-6xl mx-auto px-4 md:py-2">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between py-3">
             {/* Hamburger menu */}
             <div className="flex md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-500 hover:text-gray-600 focus:outline-none focus:ring shadow-md"
+                className="text-gray-500 hover:text-gray-600 focus:outline-none focus:ring"
               >
                 <Image src={HamImg} size={24} />
               </button>
             </div>
 
             {/* Logo */}
-            <div className="flex-shrink-0 flex items-top ml-14 md:hidden">
+            <div className="flex-shrink-0 flex items-start ml-14 md:hidden">
               <Image className="h-6 w-auto" src={Logo} alt="Logo" />
             </div>
 
@@ -94,7 +94,7 @@ const Hero = () => {
               ))}
             </div>
             
-            <button className="hidden md:flex bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] shadow-md text-white font-[24px] font-bold px-4 py-3 rounded-full text-md hover:cursor-pointer transition-colors"
+            <button className="hidden md:flex bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] shadow-2xl text-white font-[24px] font-bold px-4 py-3 rounded-full text-md hover:cursor-pointer transition-colors"
               onClick={() => handleNavItemClick('Contact us')}
             >
               WORK WITH US
@@ -102,7 +102,7 @@ const Hero = () => {
 
             {/* Mobile "Work with us" button */}
             <div className="flex md:hidden">
-              <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-1.5 py-1.5 rounded-full text-sm hover:cursor-pointer transition-colors"
+              <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] shadow-2xl text-white font-bold px-1.5 py-1.5 rounded-full text-sm hover:cursor-pointer transition-colors"
                 onClick={() => handleNavItemClick('Contact us')}
               >
                 Work with us
