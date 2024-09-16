@@ -35,7 +35,7 @@ const Hero = () => {
   };
 
   return (
-    <div className='m-3 rounded-t-[20px] bg-hero bg-cover bg-bottom bg-no-repeat md:px-[4rem] md:pb-[13rem] pb-12' id='home'>
+    <div className='m-3 md:m-5 rounded-t-[20px] bg-hero md:bg-hero2 bg-cover bg-no-repeat md:px-[4rem] md:pb-[13rem] pb-12' id='home'>
       <nav>
         {/* Navbar content (unchanged) */}
         <div className="max-w-6xl mx-auto px-4 md:py-2">
@@ -94,7 +94,7 @@ const Hero = () => {
               ))}
             </div>
             
-            <button className="hidden md:flex bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] shadow-md text-white font-[24px] font-bold px-4 py-3 rounded-[30px] text-md hover:cursor-pointer transition-colors"
+            <button className="hidden md:flex bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] shadow-md text-white font-[24px] font-bold px-4 py-3 rounded-full text-md hover:cursor-pointer transition-colors"
               onClick={() => handleNavItemClick('Contact us')}
             >
               WORK WITH US
@@ -102,7 +102,7 @@ const Hero = () => {
 
             {/* Mobile "Work with us" button */}
             <div className="flex md:hidden">
-              <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-1.5 py-1.5 rounded-3xl text-sm hover:cursor-pointer transition-colors"
+              <button className="bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-white font-bold px-1.5 py-1.5 rounded-full text-sm hover:cursor-pointer transition-colors"
                 onClick={() => handleNavItemClick('Contact us')}
               >
                 Work with us
