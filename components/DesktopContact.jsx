@@ -4,9 +4,9 @@ const DesktopContactForm = () => {
   const services = ['Web Development', 'Mobile App Development', 'UI/UX Design', 'Digital Marketing', 'Cloud Services', 'Consulting'];
 
   return (
-    <div className="hidden md:block text-white px-8 py-16">
+    <div className="hidden md:block text-white px-8 py-16" id='contact-us'>
       <h1 className="text-[64px] font-bold text-center mb-2">Contact us</h1>
-      <p className="text-center text-sm text-gray-400 mb-8">
+      <p className="text-center text-[20px] text-gray-400 mb-8">
         Cultivating Connections: Reach Out and Connect with us
       </p>
       <form className="grid grid-cols-2 gap-7 max-w-4xl mx-auto">

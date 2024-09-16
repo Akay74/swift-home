@@ -79,7 +79,7 @@ const Feedback = () => {
     <div className="pt-10 pb-20" id='reviews'>
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-[#F9F9F9] mb-2 md:mb-6 md:text-[64px]">Our Customer Feedback</h2>
-        <p className="text-[14px] text-[#C1BFBF] text-center mb-12">Don't take our word for it. Trust our customers.</p>
+        <p className="text-[14px] text-[#C1BFBF] text-center mb-12 md:text-[20px]">Don't take our word for it. Trust our customers.</p>
 
         <div className="flex justify-between mb-8">
           <FeedbackCard feedback={feedbacks[currentIndex]} />
