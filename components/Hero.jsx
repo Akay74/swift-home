@@ -4,17 +4,20 @@ import { X } from 'lucide-react';
 import Image from 'next/image';
 import HamImg from '../assets/hamburger.png';
 import Logo from '../assets/logo.png';
+import { motion } from 'framer-motion';
 
 const NavItem = ({ href, children, active, onClick }) => (
-  <a
+  <motion.a
     href={href}
     className={`block py-2 px-4 text-lg md:border-b-0 md:hover:border-b-[3px] md:border-solid md:hover:border-[#F9F9F9] md:hover:text-[#F9F9F9] md:p-0 ${
       active ? 'border-b-2 border-[#F9F9F9]' : ''
     }`}
     onClick={onClick}
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
   >
     {children}
-  </a>
+  </motion.a>
 );
 
 const Hero = () => {
@@ -33,9 +36,39 @@ const Hero = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 100,
+      },
+    },
+  };
 
   return (
-  <div className='m-3 md:m-5 rounded-t-[20px] bg-hero bg-cover bg-no-repeat md:bg-hero2 md:bg-cover md:px-[4rem] md:pb-[13rem] pb-12' id='home'>
+  <motion.div 
+    className='m-3 md:m-5 rounded-t-[20px] bg-hero bg-cover bg-no-repeat md:bg-hero2 md:bg-cover bg-opacity-[50%] bg-blend-normal md:px-[4rem] md:pb-[13rem] pb-12'
+    id='home'
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+    variants={containerVariants}
+  >
       <nav>
         {/* Navbar content (unchanged) */}
         <div className="max-w-6xl mx-auto px-4 md:py-2">
@@ -144,17 +177,31 @@ const Hero = () => {
       </nav>
 
       {/* Main Hero Section */}
-      <div className="max-w-6xl mt-2 md:mt-[5rem] px-4 py-18">
-        <h1 className="text-[38px] md:text-[96px] md:font-normal md:leading-[5rem] font-bold text-[#F9F9F9]">
+      <motion.div
+        className="max-w-6xl mt-2 md:mt-[5rem] px-4 py-18"
+        variants={containerVariants}
+      >
+        <motion.h1
+          className="text-[38px] md:text-[96px] md:font-normal md:leading-[5rem] font-bold text-[#F9F9F9]"
+          variants={itemVariants}
+        >
           Innovating the future,
-        </h1>
-        <h1 className="text-[32px] md:text-[80px] font-bold bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-transparent bg-clip-text">one solution at a time</h1>
-        <p className="text-md md:text-[23px] text-[#C1BFBF] max-w-3xl">
+        </motion.h1>
+        <motion.h1
+          className="text-[32px] md:text-[80px] font-bold bg-gradient-to-r from-[#4C80FF] to-[#4CFFD6] text-transparent bg-clip-text"
+          variants={itemVariants}
+        >
+          one solution at a time
+        </motion.h1>
+        <motion.p
+          className="text-md md:text-[23px] text-[#C1BFBF] max-w-3xl"
+          variants={itemVariants}
+        >
           Bridging ideas with innovation, we redefine possibilities to turn your vision into <span className="text-[#4C80FF]">reality</span>. 
           Partner with us to unlock new levels of efficiency and growth.
-        </p>
-      </div>
-    </div>
+        </motion.p>
+      </motion.div>
+    </motion.div>
   );
 };
 
