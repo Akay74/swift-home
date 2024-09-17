@@ -2,22 +2,46 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import PlaceholderImg from '../assets/placeholder.jpg';
+import { motion, useInView, useAnimation } from 'framer-motion';
 import BrandMgtImg from '../assets/brand-mgt.svg';
 
 const ServiceCard = ({ title, description, imageSrc }) => (
-  <div className="bg-[#0D1827] rounded-[30px] mb-6 shadow-md px-8 py-12 mx-auto w-[80%] md:w-[100%] text-center">
-    <div className="w-6 h-6 mb-4 mx-auto">
+
+  <motion.div 
+    className="bg-[#0D1827] rounded-[30px] mb-6 shadow-md px-8 py-12 mx-auto w-[80%] md:w-[100%] text-center"
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+  >
+    <motion.div 
+      className="w-6 h-6 mb-4 mx-auto"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+    >
       <Image
         src={imageSrc}
         alt={title}
         objectFit="cover"
         className="rounded-t-lg"
       />
-    </div>
-    <h3 className="text-[22px] font-semibold mb-2 bg-gradient-to-b from-[#4CFFD6] to-[#4C80FF] text-transparent bg-clip-text">{title}</h3>
-    <p className="text-[14px] text-[#C1BFBF] md:text-[16px]">{description}</p>
-  </div>
+    </motion.div>
+    <motion.h3 
+      className="text-[22px] font-semibold mb-2 bg-gradient-to-b from-[#4CFFD6] to-[#4C80FF] text-transparent bg-clip-text"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2, duration: 1 }}
+    >
+      {title}
+    </motion.h3>
+    <motion.p 
+      className="text-[14px] text-[#C1BFBF] md:text-[16px]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.4, duration: 1 }}
+    >
+      {description}
+    </motion.p>
+  </motion.div>
 );
 
 const Services = () => {
@@ -126,48 +150,95 @@ const Services = () => {
     };
   }, [services.length]);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
-    <div className="mx-auto mt-16 mb-6 px-3 py-6 md:pt-10 md:pb-8 bg-[#050D18]" id='our-services'>
-      <h1 className="text-3xl text-[#F9F9F9] font-bold text-center mb-2 md:text-[64px]">Our services</h1>
-      <h2 className="text-[12px] text-gray-600 text-center mb-6 md:mb-8 md:mt-4 md:text-[20px]">
+    <motion.div 
+      className="mx-auto mt-16 mb-6 px-3 py-6 md:pt-10 md:pb-8 bg-[#050D18]"
+      id='our-services'
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <motion.h1 
+        className="text-3xl text-[#F9F9F9] font-bold text-center mb-2 md:text-[64px]"
+        variants={itemVariants}
+      >
+        Our services
+      </motion.h1>
+      <motion.h2 
+        className="text-[12px] text-gray-600 text-center mb-6 md:mb-8 md:mt-4 md:text-[20px]"
+        variants={itemVariants}
+      >
         Empowering Your Business with Cutting-Edge Tech Solutions
-      </h2>
+      </motion.h2>
       
-      <div className="relative max-w-sm mx-auto">
+      <motion.div 
+        className="relative max-w-sm mx-auto"
+        variants={itemVariants}
+      >
         <div
           className="overflow-hidden"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <div
+          <motion.div
             className="flex transition-transform duration-300 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            animate={{ x: `-${currentIndex * 100}%` }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             {services.map((service, index) => (
-              <div key={index} className="w-full flex-shrink-0">
+              <motion.div 
+                key={index} 
+                className="w-full flex-shrink-0"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1 }}
+              >
                 <ServiceCard {...service} />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </div>
-      <div className="flex justify-center mt-4">
+      </motion.div>
+      <motion.div 
+        className="flex justify-center mt-4"
+        variants={itemVariants}
+      >
         {services.map((_, index) => (
-          <button
+          <motion.button
             key={index}
             onClick={() => {
               setCurrentIndex(index);
-              // Restart auto-swipe when manually changing slides
               startAutoSwipe();
             }}
             className={`h-2 w-2 rounded-full mx-1 ${
               currentIndex === index ? 'bg-blue-500' : 'bg-gray-300'
             }`}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
           />
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
