@@ -18,6 +18,17 @@ const Footer = () => {
     { Icon: TwitterIcon, href: '#' },
   ];
 
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <footer className="py-8 border-t-[1px] border-[#4C80FF]">
       <div className="max-w-6xl mx-auto px-4 text-sm text-[#C1BFBF]">
@@ -27,9 +38,14 @@ const Footer = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="flex justify-center space-x-2.5 mb-3 md:space-x-12">
+        <nav className="flex justify-center text-[13.8px] md:text-[16px] space-x-2 mb-3 md:space-x-12">
           {navItems.map((item) => (
-            <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="hover:text-gray-600">
+            <a 
+              key={item} 
+              href={`#${item.toLowerCase().replace(' ', '-')}`} 
+              className="hover:text-gray-600"
+              onClick={(e) => handleSmoothScroll(e, item.toLowerCase().replace(' ', '-'))}
+            >
               {item}
             </a>
           ))}

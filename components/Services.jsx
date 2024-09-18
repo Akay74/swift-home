@@ -37,7 +37,7 @@ const ServiceCard = ({ title, description, imageSrc }) => (
       className="text-[14px] text-[#C1BFBF] md:text-[16px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.4, duration: 1 }}
+      transition={{ delay: 1, duration: 1.5 }}
     >
       {description}
     </motion.p>
