@@ -105,7 +105,7 @@ const Hero = () => {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-gray-500 hover:text-gray-600 focus:outline-none focus:ring"
               >
-                <Image src={HamImg} size={24} />
+                <Image src={HamImg} alt='hamburger menu' size={24} />
               </button>
             </div>
 

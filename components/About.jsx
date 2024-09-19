@@ -61,7 +61,7 @@ const About = () => {
           We are driven by a commitment to excellence and an unwavering belief in charting unconventional paths to deliver real, unmatched value to our clients. This approach has earned us the trust and loyalty of our customers, leading to repeat business and long-lasting partnerships.
         </motion.p>
         <motion.p variants={paragraphVariants}>
-          In today's ever-changing global market, thriving requires intense collaboration, creative thinking, and cutting-edge digital upgrades. We are ready to be your partner in this journey, offering solutions that not only meet your needs but also set you apart from the competition.
+          In today&apos;s ever-changing global market, thriving requires intense collaboration, creative thinking, and cutting-edge digital upgrades. We are ready to be your partner in this journey, offering solutions that not only meet your needs but also set you apart from the competition.
         </motion.p>
       </div>
 

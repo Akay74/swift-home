@@ -125,7 +125,7 @@ const Feedback = () => {
           className="text-[14px] text-[#C1BFBF] text-center mb-12 md:text-[20px]"
           variants={itemVariants}
         >
-          Don't take our word for it. Trust our customers.
+          Don&apos;t take our word for it. Trust our customers.
         </motion.p>
 
         <motion.div 

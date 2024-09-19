@@ -180,7 +180,7 @@ const Services = () => {
       window.removeEventListener('keydown', handleKeyDown);
       clearInterval(autoSwipeInterval.current);
     };
-  }, [services.length]);
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
