@@ -5,44 +5,76 @@ import Image from 'next/image';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import BrandMgtImg from '../assets/brand-mgt.svg';
 
-const ServiceCard = ({ title, description, imageSrc }) => (
+const ServiceCard = ({ title, description, imageSrc }) => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const inView = useInView(ref, {
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-  <motion.div 
-    className="bg-[#0D1827] rounded-[30px] mb-6 shadow-md px-8 py-12 mx-auto w-[80%] md:w-[100%] text-center"
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
-  >
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
+  return (
     <motion.div 
-      className="w-6 h-6 mb-4 mx-auto"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
+      ref={ref}
+      className="bg-[#0D1827] rounded-[30px] mb-6 shadow-md px-8 py-12 mx-auto w-[80%] md:w-[100%] text-center"
+      initial="hidden"
+      animate={controls}
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { 
+          opacity: 1, 
+          y: 0,
+          transition: {
+            duration: 0.5,
+            when: "beforeChildren",
+            staggerChildren: 0.1
+          }
+        }
+      }}
     >
-      <Image
-        src={imageSrc}
-        alt={title}
-        objectFit="cover"
-        className="rounded-t-lg"
-      />
+      <motion.div 
+        className="w-6 h-6 mb-4 mx-auto"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        variants={{
+          hidden: { opacity: 0, scale: 0.8 },
+          visible: { opacity: 1, scale: 1 }
+        }}
+      >
+        <Image
+          src={imageSrc}
+          alt={title}
+          objectFit="cover"
+          className="rounded-t-lg"
+        />
+      </motion.div>
+      <motion.h3 
+        className="text-[22px] font-semibold mb-2 bg-gradient-to-b from-[#4CFFD6] to-[#4C80FF] text-transparent bg-clip-text"
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0 }
+        }}
+      >
+        {title}
+      </motion.h3>
+      <motion.p 
+        className="text-[14px] text-[#C1BFBF] md:text-[16px]"
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0 }
+        }}
+      >
+        {description}
+      </motion.p>
     </motion.div>
-    <motion.h3 
-      className="text-[22px] font-semibold mb-2 bg-gradient-to-b from-[#4CFFD6] to-[#4C80FF] text-transparent bg-clip-text"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.2, duration: 1 }}
-    >
-      {title}
-    </motion.h3>
-    <motion.p 
-      className="text-[14px] text-[#C1BFBF] md:text-[16px]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 1, duration: 1.5 }}
-    >
-      {description}
-    </motion.p>
-  </motion.div>
-);
+  );
+};
 
 const Services = () => {
   const services = [
@@ -169,10 +201,11 @@ const Services = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="mx-auto mt-16 mb-6 px-3 py-6 md:pt-10 md:pb-8 bg-[#050D18]"
       id='our-services'
       initial="hidden"
+      whileInView="visible"
       animate="visible"
       variants={containerVariants}
     >
