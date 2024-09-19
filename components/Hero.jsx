@@ -4,7 +4,7 @@ import { X } from 'lucide-react';
 import Image from 'next/image';
 import HamImg from '../assets/hamburger.png';
 import Logo from '../assets/logo.png';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const NavItem = ({ href, children, active, onClick }) => (
   <motion.a
@@ -58,6 +58,32 @@ const Hero = () => {
         stiffness: 100,
       },
     },
+  };
+
+  const menuVariants = {
+    closed: { x: "-100%" },
+    open: { 
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 30
+      }
+    }
+  };
+
+  const menuItemVariants = {
+    closed: { opacity: 0, y: 20 },
+    open: i => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        type: "spring",
+        stiffness: 300,
+        damping: 30
+      }
+    })
   };
 
   return (
@@ -145,9 +171,21 @@ const Hero = () => {
         </div>
 
         {/* Mobile menu */}
-        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
-          <div className="fixed inset-0 z-50 bg-gray-800 bg-opacity-25 backdrop-blur-sm">
-            <div className="fixed inset-y-0 left-0 max-w-xs w-full bg-[#F9F9F9] bg-opacity-5 shadow-xl overflow-y-auto">
+        <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="md:hidden fixed inset-0 z-50 bg-gray-800 bg-opacity-25 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="fixed inset-y-0 left-0 max-w-xs w-full bg-[#F9F9F9] bg-opacity-5 shadow-xl overflow-y-auto"
+              variants={menuVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
+            >
               <div className="p-6">
                 <button
                   onClick={() => setIsMenuOpen(false)}
@@ -156,24 +194,30 @@ const Hero = () => {
                   <X size={24} />
                 </button>
                 <nav className="mt-8 text-[#F9F9F9]">
-                  {navItems.map((item) => (
-                    <NavItem
+                  {navItems.map((item, index) => (
+                    <motion.div
                       key={item}
-                      href={`#${item.toLowerCase().replace(' ', '-')}`}
-                      active={activeItem === item}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavItemClick(item);
-                      }}
+                      custom={index}
+                      variants={menuItemVariants}
                     >
-                      {item}
-                    </NavItem>
+                      <NavItem
+                        href={`#${item.toLowerCase().replace(' ', '-')}`}
+                        active={activeItem === item}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavItemClick(item);
+                        }}
+                      >
+                        {item}
+                      </NavItem>
+                    </motion.div>
                   ))}
                 </nav>
               </div>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       </nav>
 
       {/* Main Hero Section */}
