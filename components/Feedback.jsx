@@ -1,8 +1,9 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import placeholderImg from '../assets/placeholder.jpg';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
 
 const StarRating = ({ rating }) => {
   return (
@@ -20,7 +21,12 @@ const StarRating = ({ rating }) => {
 };
 
 const FeedbackCard = ({ feedback }) => (
-  <div className="rounded-lg shadow-lg p-5 border-[1px] border-[#4C80FF] w-[48%]">
+  <motion.div 
+    className="rounded-lg shadow-lg p-5 border-[1px] border-[#4C80FF] w-[48%]"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
     <div className="flex items-top mb-4">
       <div className="w-8 h-8 relative mr-4">
         <Image
@@ -34,7 +40,7 @@ const FeedbackCard = ({ feedback }) => (
     </div>
     <h3 className="text-l text-[#F9F9F9] font-semibold mb-2">{feedback.name}</h3>
     <p className="text-[#C1BFBF] text-sm">{feedback.comment}</p>
-  </div>
+  </motion.div>
 );
 
 const Feedback = () => {
@@ -66,6 +72,8 @@ const Feedback = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, threshold: 0.1 });
 
   const nextFeedback = () => {
     setCurrentIndex((prev) => (prev + 2) % feedbacks.length);
@@ -75,18 +83,63 @@ const Feedback = () => {
     setCurrentIndex((prev) => (prev - 2 + feedbacks.length) % feedbacks.length);
   };
 
-  return (
-    <div className="pt-10 pb-20" id='reviews'>
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-[#F9F9F9] mb-2 md:mb-6 md:text-[64px]">Our Customer Feedback</h2>
-        <p className="text-[14px] text-[#C1BFBF] text-center mb-12 md:text-[20px]">Don't take our word for it. Trust our customers.</p>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
-        <div className="flex justify-between mb-8">
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  return (
+    <motion.div 
+      ref={ref}
+      className="pt-10 pb-20" 
+      id='reviews'
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={containerVariants}
+    >
+      <div className="max-w-4xl mx-auto px-4">
+        <motion.h2 
+          className="text-3xl font-bold text-center text-[#F9F9F9] mb-2 md:mb-6 md:text-[64px]"
+          variants={itemVariants}
+        >
+          Our Customer Feedback
+        </motion.h2>
+        <motion.p 
+          className="text-[14px] text-[#C1BFBF] text-center mb-12 md:text-[20px]"
+          variants={itemVariants}
+        >
+          Don't take our word for it. Trust our customers.
+        </motion.p>
+
+        <motion.div 
+          className="flex justify-between mb-8"
+          variants={itemVariants}
+        >
           <FeedbackCard feedback={feedbacks[currentIndex]} />
           <FeedbackCard feedback={feedbacks[(currentIndex + 1) % feedbacks.length]} />
-        </div>
+        </motion.div>
 
-        <div className="flex justify-center mb-4">
+        <motion.div 
+          className="flex justify-center mb-4"
+          variants={itemVariants}
+        >
           {[...Array(feedbacks.length / 2)].map((_, i) => (
             <div
               key={i}
@@ -95,24 +148,31 @@ const Feedback = () => {
               }`}
             ></div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="flex justify-end space-x-2">
-          <button
+        <motion.div 
+          className="flex justify-end space-x-2"
+          variants={itemVariants}
+        >
+          <motion.button
             onClick={prevFeedback}
             className="flex text-[#C1BFBF] px-3 py-1 rounded-md border border-[#C1BFBF] hover:border-[#F9F9F9] hover:text-[#F9F9F9] transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             <ChevronLeft size={24} /> Previous
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             onClick={nextFeedback}
             className="flex text-[#C1BFBF] px-3 py-1 rounded-md border border-[#C1BFBF] hover:border-[#F9F9F9] hover:text-[#F9F9F9] transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Next <ChevronRight size={24} />
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
