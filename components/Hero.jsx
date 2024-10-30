@@ -88,7 +88,7 @@ const Hero = () => {
 
   return (
   <motion.div 
-    className='m-3 md:m-5 rounded-t-[20px] bg-hero bg-cover bg-no-repeat md:bg-hero2 md:bg-cover bg-opacity-[50%] bg-blend-normal md:px-[4rem] md:pb-[13rem] pb-12'
+    className='m-3 md:m-5 rounded-t-[20px] bg-hero bg-cover bg-no-repeat md:bg-hero2 md:bg-center bg-opacity-[50%] bg-blend-normal md:px-[4rem] md:pb-[13rem] pb-12'
     id='home'
     initial="hidden"
     whileInView="visible"
