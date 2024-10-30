@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import BrandMgtImg from '../assets/brand-mgt.svg';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const ServiceCard = ({ title, description, imageSrc }) => {
   const controls = useAnimation();
@@ -129,7 +130,6 @@ const Services = () => {
 
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
-    // Pause auto-swipe on touch start
     clearInterval(autoSwipeInterval.current);
   };
 
@@ -148,19 +148,16 @@ const Services = () => {
     }
     touchStartX.current = null;
     touchEndX.current = null;
-    // Resume auto-swipe on touch end
     startAutoSwipe();
   };
 
   const startAutoSwipe = () => {
-    // Clear any existing interval
     if (autoSwipeInterval.current) {
       clearInterval(autoSwipeInterval.current);
     }
-    // Set new interval
     autoSwipeInterval.current = setInterval(() => {
       nextSlide();
-    }, 5000); // Change slide every 5 seconds
+    }, 10000);
   };
 
   useEffect(() => {
@@ -200,6 +197,29 @@ const Services = () => {
     },
   };
 
+  const NavigationButton = ({ direction, onClick }) => (
+    <motion.button
+      className={`hidden md:block absolute top-1/3 ${
+        direction === 'left' ? '-left-16 md:-left-20' : '-right-16 md:-right-20'
+      } bg-[#0D1827] rounded-full p-2 text-white opacity-75 hover:opacity-100 transition-opacity`}
+      onClick={() => {
+        onClick();
+        startAutoSwipe();
+      }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+    >
+      {direction === 'left' ? (
+        <ChevronLeft className="w-6 h-6" strokeWidth={2.5} />
+      ) : (
+        <ChevronRight className="w-6 h-6" strokeWidth={2.5} />
+      )}
+    </motion.button>
+  );
+
   return (
     <motion.div
       className="mx-auto mt-16 mb-6 px-3 py-6 md:pt-10 md:pb-8 bg-[#050D18]"
@@ -223,9 +243,12 @@ const Services = () => {
       </motion.h2>
       
       <motion.div 
-        className="relative max-w-sm mx-auto"
+        className="relative max-w-sm md:w-[70%] mx-auto"
         variants={itemVariants}
       >
+        <NavigationButton direction="left" onClick={prevSlide} />
+        <NavigationButton direction="right" onClick={nextSlide} />
+        
         <div
           className="overflow-hidden"
           onTouchStart={handleTouchStart}
@@ -244,7 +267,7 @@ const Services = () => {
                 className="w-full flex-shrink-0"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.1, stiffness: 500, damping: 30 }}
               >
                 <ServiceCard {...service} />
               </motion.div>
