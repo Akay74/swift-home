@@ -108,14 +108,14 @@ const Footer = () => {
             whileHover={{ scale: 1.05 }}
           >
             <Mail size={20} className="mr-2" />
-            <span>SwiftTech@gmail.com</span>
+            <span>aiesltd1@gmail.com</span>
           </motion.div>
           <motion.div 
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
           >
             <Phone size={20} className="mr-2" />
-            <span>+234 7012222764</span>
+            <span>+234 8101100632</span>
           </motion.div>
         </motion.div>
       </div>
