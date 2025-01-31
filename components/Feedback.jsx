@@ -46,25 +46,25 @@ const FeedbackCard = ({ feedback }) => (
 const Feedback = () => {
   const feedbacks = [
     {
-      name: "Kamsi Eduzor",
+      name: "Felicia Erivo",
       image: placeholderImg,
       rating: 5,
       comment: "Exceptional service! Their innovative solutions have truly transformed our business operations."
     },
     {
-      name: "Ejindu Ugochukwu",
+      name: "Martins Nduh",
       image: placeholderImg,
       rating: 4,
       comment: "Very impressed with their professionalism and the quality of their work. Highly recommended!"
     },
     {
-      name: "Akay Udeh",
+      name: "Cynthia Akande",
       image: placeholderImg,
       rating: 5,
       comment: "Their team went above and beyond our expectations. We're already seeing great results!"
     },
     {
-      name: "Nnamdi Uzoigwe",
+      name: "Chidubem Okoye",
       image: placeholderImg,
       rating: 4,
       comment: "Great experience working with this team. They're responsive and deliver quality results."
