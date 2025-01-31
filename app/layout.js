@@ -8,7 +8,7 @@ const lato = Lato({
 
 
 export const metadata = {
-  title: "AEIS Tech homepage",
+  title: "AEIS Tech ltd",
   description: "Homepage for AEIS Technologies",
 };
 
