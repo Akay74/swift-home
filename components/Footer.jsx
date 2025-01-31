@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/aeisLogonb.png';
 import LinkedinIcon from '../assets/Linkedin.svg';
 import InstagramIcon from '../assets/Ig.svg';
 import FacebookIcon from '../assets/Facebook.svg';
