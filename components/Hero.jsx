@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import HamImg from '../assets/hamburger.png';
-import Logo from '../assets/aeisLogonb.png';
+import Logo from '../assets/aeisMiniLogonbg.png';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const NavItem = ({ href, children, active, onClick }) => (
