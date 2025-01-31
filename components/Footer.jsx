@@ -13,10 +13,10 @@ import { Mail, Phone } from 'lucide-react';
 const Footer = () => {
   const navItems = ['Home', 'Our Services', 'About us', 'Contact us', 'Reviews'];
   const socialIcons = [
-    { Icon: LinkedinIcon, href: '#' },
-    { Icon: InstagramIcon, href: '#' },
-    { Icon: FacebookIcon, href: '#' },
-    { Icon: TwitterIcon, href: '#' },
+    { Icon: LinkedinIcon, href: 'https://www.linkedin.com/in/aeis-ltd-28a76a34a', target: '_blank' },
+    { Icon: InstagramIcon, href: 'https://www.instagram.com/aeisltd?igsh=bjdyeHgzZzFmaGJ1', target: '_blank' },
+    { Icon: FacebookIcon, href: 'https://www.facebook.com/Aeisltd?mibextid=ZbWKwL', target: '_blank' },
+    { Icon: TwitterIcon, href: 'https://x.com/aeis_ltd?t=f_OiBBpv1CHVyLSEoOnT8w&s=09', target: '_blank' },
   ];
 
   const ref = useRef(null);
@@ -88,10 +88,11 @@ const Footer = () => {
 
         {/* Social Icons */}
         <motion.div className="flex justify-center space-x-6 mb-3" variants={itemVariants}>
-          {socialIcons.map(({ Icon, href }) => (
+          {socialIcons.map(({ Icon, href, target }) => (
             <motion.a 
               key={href} 
               href={href} 
+              target={target}
               className="text-[#C1BFBF] hover:text-gray-600"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
